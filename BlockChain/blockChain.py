@@ -42,7 +42,7 @@ class BlockChain(object):
                 block = file.read(blockLength)
                 return block
 
-     def parseBlock(_self, block):                      
+    def parseBlock(_self, block):                      
                 blockPrefix = BlockPrefix()
                 blockPrefix.version, = struct.unpack('<i', block(_self.BLOCK_LEN_BYTES))
                 return block
