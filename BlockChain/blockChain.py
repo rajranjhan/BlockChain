@@ -13,18 +13,17 @@ class BlockChain(object):
     #properties
     _filename = ""
     _currentFilePos = 0
-
-
-    def loadfile(_self,file):
-        _filename = file;
+  
+    def loadFromFile(_self,file):
+        _self._filename = file;
 
     def blocks(_self):
-        if not _filename:
+        if not _self._filename:
             return
         # TODO find next block in file
         while True:
-            (_currentFilePos, block) = getBlock(_filename, _currentFilePos)
-            if(_currentFilePos != -1) :
+            (_self._currentFilePos, block) = _self.getBlock(_self._filename, _self._currentFilePos)
+            if(_self._currentFilePos != -1) :
                 yield block
             else:
                 break
@@ -48,9 +47,11 @@ class BlockChain(object):
                 return block
                              
 
-if __name__ == '__main__':
-    blockChain = BlockChain('blk00000.dat')
-    for b in blockChain.blocks:
+if __name__ == '__main__': 
+    blockChain = BlockChain()
+    blockChain.loadFromFile('blk00000.dat')
+    blocks = blockChain.blocks()
+    for b in blocks:        
         blockPrefix = blockchain.parseBlock(b)
 
 
