@@ -16,7 +16,7 @@ class BlockChain(object):
   
     def loadFromFile(_self,file):
         _self._filename = file;
-
+         
     def blocks(_self):
         if not _self._filename:
             return
