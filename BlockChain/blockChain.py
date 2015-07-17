@@ -38,12 +38,12 @@ class BlockChain(object):
                 # '<' = little endian, 'i' = integer
                 blockLength, = struct.unpack('<i', file.read(_self.BLOCK_LEN_BYTES))
                 blockPrefix = BlockPrefix()
-                block = file.read(blockLength)
-                return block
+                block = file.read(blockLength)                
+                return file.tell(), block
 
     def parseBlock(_self, block):                      
                 blockPrefix = BlockPrefix()
-                blockPrefix.version, = struct.unpack('<i', block(_self.BLOCK_LEN_BYTES))
+                blockPrefix.version, = struct.unpack('<i', block[0:_self.BLOCK_LEN_BYTES])
                 return block
                              
 
@@ -52,6 +52,6 @@ if __name__ == '__main__':
     blockChain.loadFromFile('blk00000.dat')
     blocks = blockChain.blocks()
     for b in blocks:        
-        blockPrefix = blockchain.parseBlock(b)
+        blockPrefix = blockChain.parseBlock(b)
 
 
