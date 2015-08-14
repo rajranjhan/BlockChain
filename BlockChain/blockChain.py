@@ -1,6 +1,7 @@
 import struct 
 import numpy as np
 import os
+
 class BlockPrefix(object): #Must be new-style class!
     #slots save memory in 
     __slots__ = ['version', 'previousBlock', 'merkleRoot', 'timeStamp', 'bits', 'nonce']

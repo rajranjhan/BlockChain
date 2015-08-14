@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1d7fc554-06c7-4357-bd84-76e405ded04c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>blockChain.py</StartupFile>
+    <StartupFile>bitcoinclient.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
