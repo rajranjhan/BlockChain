@@ -9,13 +9,13 @@ class BitcoinClient(object):
         nonce = 0;
 
         while True:
-            hash_object = hashlib.sha256(data + nonce).hexdigest()            
-            print(hex_dig)                 
+            hexDig = hashlib.sha256((data + str(nonce)).encode()).hexdigest()                        
+            if hexDig.startswith(target):
+                return hexDig, nonce                
             nonce += 1
-            if nonce == 5:
-                break
-
-
+             
 if __name__ == '__main__': 
     client = BitcoinClient()
-    client.proofOfWork('This is a string', '0000')
+    hashedValue, nonce = client.proofOfWork('This is a string', '0000')
+    print(hashedValue)
+    print(nonce)

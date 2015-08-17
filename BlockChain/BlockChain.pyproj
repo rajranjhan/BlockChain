@@ -30,6 +30,9 @@
     <Compile Include="blockChain.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="hashKey.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
   <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
