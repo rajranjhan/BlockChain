@@ -1,4 +1,5 @@
-class hashKey(object):
+__author__ = 'aranjhan'
+class ECKey(object):
     """description of class"""
 
     def generatePrivateKey(_self):
@@ -8,5 +9,3 @@ class hashKey(object):
 
 
     def getAddress(_self,  publicKey):
-
-            
